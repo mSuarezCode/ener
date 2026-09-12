@@ -291,7 +291,7 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 /* --- Estado Visibles (Entrada) --- */
 .hero-ingenieros-img.hero-visible,
 .glass-card.hero-visible {
-  opacity: 1;
+  opacity: 0.8;
   transform: translateX(0);
 }
 
@@ -1413,4 +1413,89 @@ h1, h2, h3, h4, h5, h6, .nav-link {
 .hero-actions .btn {
   flex: 1; /* Hace que ambos botones midan exacto lo mismo de ancho */
   text-align: center;
+}
+
+/* Estilos para el nuevo logotipo en el Navbar */
+.navbar-logo {
+  height: 60px;          /* Ajusta la altura deseada */
+  width: auto;           /* Mantiene la proporción del PNG */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover opcional para interacción */
+.navbar-brand:hover .navbar-logo {
+  transform: scale(1.03);
+}
+
+/* Estilos para el logotipo en el Footer */
+.footer-logo {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Si tu navbar no tiene fondo oscuro por defecto, asegúrate de añadir un fondo que contraste con la tipografía blanca */
+.navbar-custom {
+  background-color: #1a1a1a; /* O mantén tu color oscuro corporativo */
+}
+
+#main-navbar .navbar-nav .nav-link {
+    font-size: 1.2em; 
+}
+
+/* Estado en reposo (Azul #004A70 con ícono en blanco) */
+.value-card .icon-box {
+  width: 56px;
+  height: 56px;
+  background-color: #004A70;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estado Hover (Cambio a verde #7AB55C al pasar el cursor sobre la tarjeta o el ícono) */
+.value-card:hover .icon-box {
+  background-color: #7AB55C;
+  color: #ffffff;
+  transform: translateY(-2px); /* Un ligero realce opcional */
+}
+
+/* Configuración base de la tarjeta */
+.value-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid transparent !important; /* Borde superior transparente por defecto */
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado Hover de la tarjeta completa */
+.value-card:hover {
+  border-top-color: #7AB55C !important; /* Borde verde en la parte superior */
+  transform: translateY(-4px);         /* Eleva ligeramente la tarjeta */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important; /* Suaviza la sombra al elevarse */
+}
+
+/* Aseguramos que la tarjeta maneje la posición de sus elementos hijos */
+.service-card {
+  position: relative;
+  overflow: hidden; /* Corta el SVG si sale de los bordes de la tarjeta */
+  z-index: 1;
+}
+
+/* Estilos para el SVG en el fondo */
+.card-bg-icon {
+  position: absolute;
+  top: -15px;         /* Lo sube un poco para alinearlo bien */
+  right: -20px;       /* Lo pega a la derecha */
+  width: 150px;       /* Tamaño grande para que impacte */
+  height: 150px;
+  opacity: 0.5;      /* Transparencia sutil (ajusta entre 0.05 y 0.12 a tu gusto) */
+  color: #004b75;     /* Color de tu marca */
+  pointer-events: none; /* Evita que interfiera con el clic o hover */
+  z-index: -1;        /* Se envía al fondo por detrás del texto */
 }
